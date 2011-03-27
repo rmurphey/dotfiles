@@ -1,4 +1,4 @@
 vim/swaps/*
-ssh/id_rsa
+ssh/id_rsa*
 vim/vim
 ssh/ssh
