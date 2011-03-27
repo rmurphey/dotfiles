@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/rmurphey/projects/toura_app/javascript/toura'
+let g:netrw_dirhist_2='/Users/rmurphey/projects/toura_app/javascript/toura/components'
+let g:netrw_dirhist_3='/Users/rmurphey/projects/toura_app/javascript/toura/components/GoogleMap'
+let g:netrw_dirhist_4='/Users/rmurphey/projects/toura_app/tmp/build/Toura-iPad'
+let g:netrw_dirhist_5='/Users/rmurphey/projects/toura_app/tmp/build/Toura-iPhone'
