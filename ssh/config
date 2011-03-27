@@ -8,10 +8,6 @@ Host hattusa
 	HostName hattusa.outer.org
 	User rmurphey
 
-Host mmg
-	HostName 172.16.122.129
-	User rebecca
-
-Host mbp 
-        HostName rmurphey-mbp.local
-        User rmurphey
+Host mbp
+  HostName rmurphey-mbp.local
+  User rmurphey
