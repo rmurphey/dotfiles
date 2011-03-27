@@ -1,3 +1,42 @@
 [user]
 	name = Rebecca Murphey
 	email = rmurphey@gmail.com
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[color]
+  ui = true
+
+[color "diff"]
+  whitespace = red reverse
+
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[branch]
+  autosetupmerge = true
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    pom = push origin master
