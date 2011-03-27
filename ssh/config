@@ -1,12 +1,12 @@
 Host mt
-	HostName s462.gridserver.com
-	User serveradmin@s462.gridserver.com
-	ServerAliveInterval 30
-	ServerAliveCountMax 120
+  HostName s462.gridserver.com
+  User serveradmin@s462.gridserver.com
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
 
 Host hattusa
-	HostName hattusa.outer.org
-	User rmurphey
+  HostName hattusa.outer.org
+  User rmurphey
 
 Host mbp
   HostName rmurphey-mbp.local
