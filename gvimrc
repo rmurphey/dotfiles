@@ -1,11 +1,11 @@
 " Set syntax highlighting options.
 set t_Co=256
-set lines=70
-set columns=238
+set columns=254
+set lines=60
 set background=dark
 syntax on
-colorscheme molokai
-set guifont=Meslo_LG_S_DZ:h12
+colorscheme solarized  " molokai
+set guifont=Meslo_LG_S_DZ:h15
 
 " Change mapleader
 let mapleader=","
@@ -15,7 +15,7 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 
 " Set some junk
-set wildignore+=*/javascript/dojo-release-*
+set wildignore+=*/dojo-release-*
 " set wildignore+=*/toura_app/tmp/*
 set wildignore+=*/javascript/testing/*
 
@@ -196,3 +196,19 @@ map <leader>b :b#<cr>
 " when vimrc is edited, reload it
 autocmd bufwritepost .gvimrc source $MYGVIMRC
 autocmd bufwritepost .vimrc source $MYVIMRC
+
+
+
+function! ToggleBackground()
+  if (g:solarized_style=="dark")
+       let g:solarized_style="light"
+       colorscheme solarized
+  else
+       let g:solarized_style="dark"
+       colorscheme solarized
+  endif
+endfunction
+command! Togbg call ToggleBackground()
+nnoremap <F5> :call ToggleBackground()<CR>
+inoremap <F5> <ESC>:call ToggleBackground()<CR>a
+vnoremap <F5> <ESC>:call ToggleBackground()<CR>
