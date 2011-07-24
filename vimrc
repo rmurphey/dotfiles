@@ -1,8 +1,9 @@
 " Set syntax highlighting options.
-" set t_Co=256
+set t_Co=256
 set background=dark 
 syntax on
-colorscheme greens
+colorscheme solarized
+set guifont=Inconsolata:h14
 
 " Change mapleader
 let mapleader=","
@@ -12,8 +13,11 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 
 " Set some junk
-set wildignore+=*/javascript/dojo-release-1.5.0/*
-set wildignore+=*/javascript/dojo-release-1.5.0-src/*
+set wildignore+=*/javascript/dojo-release-*
+set wildignore+=*/javascript/testing/*
+set wildignore+=*/javascript/MAP/*
+set wildignore+=*/javascript/browserTesting/*
+
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
 set cursorline " Highlight current line
@@ -22,6 +26,8 @@ set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
+set ignorecase
+set smartcase
 " set foldcolumn=4 " Column to show folds
 " set foldenable
 " set foldlevel=2
@@ -101,8 +107,8 @@ map <leader>n :NERDTreeToggle<CR>
 
 " Buffer navigation (,,) (,]) (,[) (,ls)
 map <Leader>, <C-^>
-" :map <Leader>] :bnext<CR>
-" :map <Leader>[ :bprev<CR>
+:map <Leader>] :bnext<CR>
+:map <Leader>[ :bprev<CR>
 map <Leader>ls :buffers<CR>
 
 " Close Quickfix window (,cq)
@@ -131,6 +137,7 @@ imap <PageUp> <C-O><C-U>
 imap <PageDown> <C-O><C-D>
 
 " filetype plugin indent on
+:filetype on
 filetype plugin on
 
 " Restore cursor position
@@ -145,16 +152,20 @@ autocmd BufReadPost *
 " Markdown
 augroup mkd
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
-" CSS3
 au BufRead,BufNewFile *.css set ft=css syntax=css
-
-" HTML5
 au BufRead,BufNewFile *.html set ft=html syntax=html
 au BufRead,BufNewFile *.mustache set ft=html syntax=html
 
 au BufRead,BufNewFile *.js set ft=javascript syntax=javascript
+au BufRead,BufNewfile *.rb set ft=ruby syntax=ruby
+au BufRead,BufNewfile *.md set ft=markdown syntax=markdown
 " autocmd BufWritePost *.js JSLint
 
-:filetype on
+autocmd BufWritePre * :%s/\s\+$//e
+
+" when vimrc is edited, reload it
+autocmd bufwritepost .gvimrc source $MYGVIMRC
+autocmd bufwritepost .vimrc source $MYVIMRC

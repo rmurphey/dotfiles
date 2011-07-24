@@ -1,11 +1,12 @@
 " Set syntax highlighting options.
 set t_Co=256
-set columns=254
-set lines=60
+set columns=270
+set lines=80
 set background=dark
 syntax on
-colorscheme solarized  " molokai
-set guifont=Meslo_LG_S_DZ:h15
+colorscheme solarized
+set guifont=Inconsolata:h14
+"set guifont=DejaVuSansMono:h14
 
 " Change mapleader
 let mapleader=","
@@ -18,6 +19,8 @@ set directory=~/.vim/swaps
 set wildignore+=*/dojo-release-*
 " set wildignore+=*/toura_app/tmp/*
 set wildignore+=*/javascript/testing/*
+set wildignore+=*/javascript/MAP/*
+set wildignore+=*/javascript/browserTesting/*
 
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -143,9 +146,9 @@ autocmd BufReadPost *
 call pathogen#runtime_append_all_bundles()
 
 " Markdown
-augroup mkd
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-augroup END
+autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
+autocmd BufRead *.md set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
+autocmd BufRead *.mdown set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
 
 " CSS3
 au BufRead,BufNewFile *.scss set filetype=scss
@@ -155,10 +158,9 @@ au BufRead,BufNewFile *.css set ft=css syntax=css
 au BufRead,BufNewFile *.html set ft=html syntax=html
 au BufRead,BufNewFile *.mustache set ft=html syntax=html
 au BufRead,BufNewFile *.haml set ft=haml
-au BufRead,BufNewFile *.md set ft=markdown syntax=markdown
 
 au BufRead,BufNewFile *.js set ft=javascript syntax=javascript
-" autocmd BufWritePost *.js JSLint
+au BufRead,BufNewfile *.rb set ft=ruby syntax=ruby
 
 autocmd BufWritePre * :%s/\s\+$//e
 
