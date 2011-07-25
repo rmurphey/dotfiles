@@ -1,6 +1,6 @@
 " Set syntax highlighting options.
 set t_Co=256
-set background=dark 
+set background=dark
 syntax on
 colorscheme solarized
 set guifont=Inconsolata:h14
