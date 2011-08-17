@@ -5,7 +5,7 @@ set lines=80
 set background=dark
 syntax on
 colorscheme solarized
-set guifont=Inconsolata:h14
+set guifont=Inconsolata:h18
 "set guifont=DejaVuSansMono:h14
 
 " Change mapleader
@@ -20,7 +20,8 @@ set wildignore+=*/dojo-release-*
 " set wildignore+=*/toura_app/tmp/*
 set wildignore+=*/javascript/testing/*
 set wildignore+=*/javascript/MAP/*
-set wildignore+=*/javascript/browserTesting/*
+set wildignore+=*/javascript/dev/*
+set wildignore+=*/javascript/device/*
 
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -74,6 +75,7 @@ nnoremap <C-y> 3<C-y>
 
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
+noremap <leader>tf :CommandTFlush<CR>
 
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:↴,nbsp:_
