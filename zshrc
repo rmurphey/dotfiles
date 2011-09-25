@@ -27,19 +27,11 @@ export PATH=$PATH:/Developer/SDKs/android-sdk-mac_x86/tools
 export PATH=$PATH:/Developer/SDKs/android-sdk-mac_x86/platform-tools
 export PATH=$PATH:/usr/local/phonegap-android/bin
 
-
-
-
-
 # Customize to your needs...
 export PATH=/Users/rmurphey/.gem/ruby/1.8/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
-# export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
-# export PATH=/Users/rmurphey/.rvm/gems/ruby-1.9.2-p0/bin
-# export PATH=/Users/rmurphey/.rvm/gems/ruby-1.9.2-p0@global/bin
-# export PATH=/Users/rmurphey/.rvm/rubies/ruby-1.9.2-p0/bin
-# export PATH=$PATH:/Users/rmurphey/.rvm/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
 
 # toura
 export PATH=$PATH:/usr/local/bin/android-sdk-mac_x86/tools
@@ -49,6 +41,13 @@ export PATH=$PATH:/Users/rmurphey/projects/toura_map/mulberry/bin
 
 export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
-#test -r /sw/bin/init.sh && . /sw/bin/init.sh
+export PATH=$PATH:/Users/rmurphey/projects/toura_map/mag/bin
+export PATH=$PATH:/Users/rmurphey/projects/toura_map/mulberry/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000

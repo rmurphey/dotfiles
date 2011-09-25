@@ -9,3 +9,5 @@ let g:netrw_dirhist_6='/usr/local/Library/Formula'
 let g:netrw_dirhist_7='/Users/rmurphey/projects/blog-octopress/source'
 let g:netrw_dirhist_8='/Users/rmurphey/projects/demo/awesome/javascript/components/Twitter'
 let g:netrw_dirhist_9='/Users/rmurphey/projects/toura_map/toura_app/tmp/build/android'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/rmurphey/projects/toura_map/capitoljs-demo/javascript/components/Twitter'

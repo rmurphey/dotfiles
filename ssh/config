@@ -12,6 +12,10 @@ Host mbp
   HostName rmurphey-mbp.local
   User rmurphey
 
+Host mbp
+  HostName rmurphey-mbp13.local
+  User rmurphey
+
 Host imac
   HostName rmurphey-imac.local
   User rmurphey
