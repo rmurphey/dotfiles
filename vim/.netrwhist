@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/rmurphey/projects/toura_app/javascript/toura'
 let g:netrw_dirhist_2='/Users/rmurphey/projects/toura_app/javascript/toura/components'
 let g:netrw_dirhist_3='/Users/rmurphey/projects/toura_app/javascript/toura/components/GoogleMap'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/Users/rmurphey/projects/toura_app/tmp/build/Toura-iPad'
 let g:netrw_dirhist_5='/Users/rmurphey/projects/toura_app/tmp/build/Toura-iPhone'
 let g:netrw_dirhist_6='/usr/local/Library/Formula'
 let g:netrw_dirhist_7='/Users/rmurphey/projects/blog-octopress/source'
+let g:netrw_dirhist_8='/Users/rmurphey/projects/demo/awesome/javascript/components/Twitter'
+let g:netrw_dirhist_9='/Users/rmurphey/projects/toura_map/toura_app/tmp/build/android'

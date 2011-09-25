@@ -1,9 +1,12 @@
 " Set syntax highlighting options.
 set t_Co=256
-set background=dark
+set guifont=MesloLGSDZ:h14
+set linespace=1
+let g:solarized_style     =   "dark"
+let g:solarized_contrast  =   "high"
 syntax on
+set background=dark
 colorscheme solarized
-set guifont=Inconsolata:h14
 
 " Change mapleader
 let mapleader=","
@@ -16,7 +19,11 @@ set directory=~/.vim/swaps
 set wildignore+=*/javascript/dojo-release-*
 set wildignore+=*/javascript/testing/*
 set wildignore+=*/javascript/MAP/*
+set wildignore+=*/javascript/testing/*
 set wildignore+=*/javascript/browserTesting/*
+set wildignore+=*/javascript/dev/*
+set wildignore+=*/javascript/device/*
+
 
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -110,6 +117,7 @@ map <Leader>, <C-^>
 :map <Leader>] :bnext<CR>
 :map <Leader>[ :bprev<CR>
 map <Leader>ls :buffers<CR>
+map <leader>b :b#<cr>
 
 " Close Quickfix window (,cq)
 map <leader>cq :cclose<CR>
@@ -136,6 +144,9 @@ map <PageDown> <C-D>
 imap <PageUp> <C-O><C-U>
 imap <PageDown> <C-O><C-D>
 
+" open file under cursor in new window
+map <leader>gf <C-w>gf
+
 " filetype plugin indent on
 :filetype on
 filetype plugin on
@@ -147,17 +158,21 @@ autocmd BufReadPost *
   \ endif
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
-" call pathogen#runtime_append_all_bundles()
+call pathogen#runtime_append_all_bundles()
 
 " Markdown
-augroup mkd
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
-augroup END
+autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
+autocmd BufRead *.md set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
+autocmd BufRead *.mdown set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
 
+" CSS3
+au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.css set ft=css syntax=css
+
+" HTML5
 au BufRead,BufNewFile *.html set ft=html syntax=html
 au BufRead,BufNewFile *.mustache set ft=html syntax=html
+au BufRead,BufNewFile *.haml set ft=haml
 
 au BufRead,BufNewFile *.js set ft=javascript syntax=javascript
 au BufRead,BufNewfile *.rb set ft=ruby syntax=ruby
@@ -169,3 +184,50 @@ autocmd BufWritePre * :%s/\s\+$//e
 " when vimrc is edited, reload it
 autocmd bufwritepost .gvimrc source $MYGVIMRC
 autocmd bufwritepost .vimrc source $MYVIMRC
+
+map <leader>ev :e $MYVIMRC<cr>
+
+set autoread
+set visualbell
+set undolevels=999
+set ignorecase
+set smartcase
+set nobackup
+set nowritebackup
+set noswapfile
+
+if v:version >= 703
+    " undo - set up persistent undo
+    set undofile
+    set undodir=$HOME/.vim/undodir
+endif
+
+" auto complete {} indent and position the cursor in the middle line
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap [<CR>  [<CR>]<Esc>O
+
+" cycle between buffers
+map <right> :bn<cr>
+map <left> :bp<cr>
+map <leader>b :b#<cr>
+
+" when vimrc is edited, reload it
+autocmd bufwritepost .gvimrc source $MYGVIMRC
+autocmd bufwritepost .vimrc source $MYVIMRC
+
+
+
+function! ToggleBackground()
+  if (g:solarized_style=="dark")
+       let g:solarized_style="light"
+       colorscheme solarized
+  else
+       let g:solarized_style="dark"
+       colorscheme solarized
+  endif
+endfunction
+command! Togbg call ToggleBackground()
+nnoremap <F5> :call ToggleBackground()<CR>
+inoremap <F5> <ESC>:call ToggleBackground()<CR>a
+vnoremap <F5> <ESC>:call ToggleBackground()<CR>

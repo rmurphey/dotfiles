@@ -45,6 +45,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/bin/android-sdk-mac_x86/tools
 export PATH=$PATH:/usr/local/phonegap-android/bin
 export PATH=$PATH:/usr/local/depot_tools
+export PATH=$PATH:/Users/rmurphey/projects/toura_map/mulberry/bin
 
 export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
