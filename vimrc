@@ -16,13 +16,16 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 
 " Set some junk
-set wildignore+=*/javascript/dojo-release-*
+" set wildignore+=*/javascript/dojo-release-*
 set wildignore+=*/javascript/testing/*
 set wildignore+=*/javascript/MAP/*
 set wildignore+=*/javascript/testing/*
 set wildignore+=*/javascript/browserTesting/*
 set wildignore+=*/javascript/dev/*
 set wildignore+=*/javascript/device/*
+set wildignore+=*/javascript/fake/*
+set wildignore+=*/javascript/browser/*
+set wildignore+=*/javascript/mulberry/*
 
 
 set autoindent " Copy indent from last line when starting new line.
@@ -159,6 +162,7 @@ autocmd BufReadPost *
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 " Markdown
 autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
@@ -180,6 +184,7 @@ au BufRead,BufNewfile *.md set ft=markdown syntax=markdown
 " autocmd BufWritePost *.js JSLint
 
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePost,FileWritePost *.js JSHint
 
 " when vimrc is edited, reload it
 autocmd bufwritepost .gvimrc source $MYGVIMRC

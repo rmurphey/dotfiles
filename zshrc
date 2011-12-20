@@ -41,8 +41,8 @@ export PATH=$PATH:/Users/rmurphey/projects/toura_map/mulberry/bin
 
 export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
-export PATH=$PATH:/Users/rmurphey/projects/toura_map/mag/bin
-export PATH=$PATH:/Users/rmurphey/projects/toura_map/mulberry/bin
+export PATH=$PATH:/Users/rmurphey/projects/mulberry/mulberry/bin
+export PATH=$PATH:/Users/rmurphey/projects/mulberry/cli/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
