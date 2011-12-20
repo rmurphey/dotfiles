@@ -37,12 +37,9 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
 export PATH=$PATH:/usr/local/bin/android-sdk-mac_x86/tools
 export PATH=$PATH:/usr/local/phonegap-android/bin
 export PATH=$PATH:/usr/local/depot_tools
-export PATH=$PATH:/Users/rmurphey/projects/toura_map/mulberry/bin
+export PATH=$PATH:/Users/rmurphey/projects/mulberry/cli/bin
 
 export NODE_PATH=/usr/local/lib/node:$NODE_PATH
-
-export PATH=$PATH:/Users/rmurphey/projects/mulberry/mulberry/bin
-export PATH=$PATH:/Users/rmurphey/projects/mulberry/cli/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 

@@ -1,6 +1,6 @@
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=MesloLGSDZ:h14
+set guifont=MesloLGSDZ:h16
 set linespace=1
 let g:solarized_style     =   "dark"
 let g:solarized_contrast  =   "high"
@@ -16,17 +16,8 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 
 " Set some junk
-" set wildignore+=*/javascript/dojo-release-*
-set wildignore+=*/javascript/testing/*
-set wildignore+=*/javascript/MAP/*
-set wildignore+=*/javascript/testing/*
-set wildignore+=*/javascript/browserTesting/*
-set wildignore+=*/javascript/dev/*
-set wildignore+=*/javascript/device/*
-set wildignore+=*/javascript/fake/*
-set wildignore+=*/javascript/browser/*
-set wildignore+=*/javascript/mulberry/*
-
+set wildignore+=*/javascript/dojo-release-*
+set wildignore+=*/js_builds/*
 
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -168,6 +159,7 @@ call pathogen#infect()
 autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
 autocmd BufRead *.md set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
 autocmd BufRead *.mdown set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
+autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
 
 " CSS3
 au BufRead,BufNewFile *.scss set filetype=scss
