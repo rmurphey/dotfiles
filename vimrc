@@ -1,11 +1,11 @@
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=MesloLGSDZ:h16
+set guifont=MesloLGSDZ:h13
 set linespace=1
-let g:solarized_style     =   "dark"
+let g:solarized_style     =   "light"
 let g:solarized_contrast  =   "high"
 syntax on
-set background=dark
+set background=light
 colorscheme solarized
 
 " Change mapleader
@@ -16,7 +16,7 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 
 " Set some junk
-set wildignore+=*/javascript/dojo-release-*
+set wildignore+=*/app/dojo-release-*
 set wildignore+=*/js_builds/*
 
 set autoindent " Copy indent from last line when starting new line.
