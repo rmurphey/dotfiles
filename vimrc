@@ -1,9 +1,9 @@
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=MesloLGSDZ:h16
+set guifont=MesloLGSDZ:h13
 set linespace=1
 syntax on
-set background=dark
+set background=light
 colorscheme solarized
 
 if has('gui_running')
