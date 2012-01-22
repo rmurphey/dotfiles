@@ -2,11 +2,20 @@
 set t_Co=256
 set guifont=MesloLGSDZ:h16
 set linespace=1
-let g:solarized_style     =   "dark"
-let g:solarized_contrast  =   "high"
 syntax on
 set background=dark
 colorscheme solarized
+
+if has('gui_running')
+  let g:solarized_style     =   "dark"
+  let g:solarized_contrast  =   "high"
+  set background=dark
+else
+  let g:solarized_termcolors=   256
+  let g:solarized_style     =   "dark"
+  let g:solarized_contrast  =   "high"
+  set background=dark
+endif
 
 " Change mapleader
 let mapleader=","
@@ -16,8 +25,8 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 
 " Set some junk
-set wildignore+=*/javascript/dojo-release-*
-set wildignore+=*/js_builds/*
+set wildignore+=*/app/dojo-release-*
+set wildignore+=*/js_builds*
 
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -173,10 +182,8 @@ au BufRead,BufNewFile *.haml set ft=haml
 au BufRead,BufNewFile *.js set ft=javascript syntax=javascript
 au BufRead,BufNewfile *.rb set ft=ruby syntax=ruby
 au BufRead,BufNewfile *.md set ft=markdown syntax=markdown
-" autocmd BufWritePost *.js JSLint
 
 autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePost,FileWritePost *.js JSHint
 
 " when vimrc is edited, reload it
 autocmd bufwritepost .gvimrc source $MYGVIMRC
