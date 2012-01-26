@@ -1,3 +1,8 @@
+" Emulate bundles, allow plugins to live independantly. Easier to manage.
+call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+call pathogen#helptags()
+
 " Set syntax highlighting options.
 set t_Co=256
 set guifont=MesloLGSDZ:h13
@@ -9,12 +14,12 @@ colorscheme solarized
 if has('gui_running')
   let g:solarized_style     =   "dark"
   let g:solarized_contrast  =   "high"
-  set background=dark
+  set background=light
 else
   let g:solarized_termcolors=   256
-  let g:solarized_style     =   "dark"
+  let g:solarized_style     =   "light"
   let g:solarized_contrast  =   "high"
-  set background=dark
+  set background=light
 endif
 
 " Change mapleader
@@ -159,10 +164,6 @@ autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
-
-" Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
 
 " Markdown
 autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
