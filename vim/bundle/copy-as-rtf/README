@@ -1,0 +1,7 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3676
+
+This plugin provides a CopyRTF command for OS X systems that copies the current buffer or selected text to the clipboard as syntax-highlighted RTF text.
+
+This plugin was inspired by the rtf-highlight plugin (https://github.com/dharanasoft/rtf-highlight), but only uses commands available by default on OS X and an HTML conversion plugin that ships with vim.
+
+Mac-only, but if there are equivalent commands for other platforms (html to rtf conversion and copy to clipboard), let me know via the github project (https://github.com/aniero/vim-copy-as-rtf) and file an issue or submit a patch.
