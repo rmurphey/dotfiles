@@ -8,13 +8,13 @@ set t_Co=256
 set guifont=MesloLGSDZ:h13
 set linespace=1
 syntax on
-set background=light
+set background=dark
 colorscheme solarized
 
 if has('gui_running')
   let g:solarized_style     =   "dark"
   let g:solarized_contrast  =   "high"
-  set background=light
+  set background=dark
 else
   let g:solarized_termcolors=   256
   let g:solarized_style     =   "light"
@@ -32,6 +32,7 @@ set directory=~/.vim/swaps
 " Set some junk
 set wildignore+=*/app/dojo-release-*
 set wildignore+=*/js_builds*
+set wildignore+=*/builds*
 
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
