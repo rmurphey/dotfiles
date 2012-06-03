@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/rmurphey/projects/toura_map/capitoljs-demo/javascript/components/Twitter'
 let g:netrw_dirhist_2='/Users/rmurphey/projects/toura_map/toura_app/javascript/toura/components/NodeGallery'
 let g:netrw_dirhist_3='/Users/rmurphey/projects/mulberry-octopress/_deploy'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/rmurphey/projects/mulberry-octopress/source/_posts
 let g:netrw_dirhist_6='/Users/rmurphey/projects/mulberry-demos/phonegap_apis/themes/default/components'
 let g:netrw_dirhist_7='/Users/rmurphey/.vim'
 let g:netrw_dirhist_8='/Users/rmurphey/projects/mulberry/demos/kitchensink'
+let g:netrw_dirhist_9='/Users/rmurphey/projects/structure'

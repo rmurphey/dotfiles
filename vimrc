@@ -5,16 +5,24 @@ call pathogen#helptags()
 
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=MesloLGSDZ:h13
-set linespace=1
+set guifont=MesloLGSDZ:h16
+set linespace=2
 syntax on
-set background=dark
 colorscheme solarized
+set lazyredraw
+
 
 if has('gui_running')
-  let g:solarized_style     =   "dark"
+  let g:solarized_style     =   "light"
   let g:solarized_contrast  =   "high"
-  set background=dark
+  set background=light
+
+  " remove toolbar
+  set guioptions=egmrt
+
+  " remove scroll bars
+  set guioptions-=r
+  set guioptions-=L
 else
   let g:solarized_termcolors=   256
   let g:solarized_style     =   "light"
@@ -33,6 +41,7 @@ set directory=~/.vim/swaps
 set wildignore+=*/app/dojo-release-*
 set wildignore+=*/js_builds*
 set wildignore+=*/builds*
+set wildignore+=*/.sass-cache*
 
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -237,3 +246,5 @@ command! Togbg call ToggleBackground()
 nnoremap <F5> :call ToggleBackground()<CR>
 inoremap <F5> <ESC>:call ToggleBackground()<CR>a
 vnoremap <F5> <ESC>:call ToggleBackground()<CR>
+
+nmap <F6> :set invnumber<CR>
