@@ -1,3 +1,9 @@
+" Set some junk
+set wildignore+=*/app/dojo-release-*
+set wildignore+=*/js_builds*
+" set wildignore+=*/builds*
+set wildignore+=*/.sass-cache*
+
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
@@ -5,8 +11,8 @@ call pathogen#helptags()
 
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=MesloLGSDZ:h16
-set linespace=2
+set guifont=MesloLGSDZ:h14
+set linespace=1
 syntax on
 colorscheme solarized
 set lazyredraw
