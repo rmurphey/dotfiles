@@ -50,6 +50,7 @@ set wildignore+=*/builds*
 set wildignore+=*/.sass-cache*
 
 set autoindent " Copy indent from last line when starting new line.
+set colorcolumn=80 " mark col 80
 set backspace=indent,eol,start
 set cursorline " Highlight current line
 set diffopt=filler " Add vertical spaces to keep right and left aligned
