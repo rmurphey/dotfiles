@@ -52,3 +52,5 @@
 [merge]
 	tool = opendiff
 	summary = true
+[mergetool]
+	keepBackup = true

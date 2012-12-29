@@ -5,30 +5,11 @@ call pathogen#helptags()
 
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=MesloLGSDZ:h16
-set linespace=2
+set guifont=Consolas:h14
+set linespace=1
 syntax on
-colorscheme solarized
+colorscheme molokai
 set lazyredraw
-
-
-if has('gui_running')
-  let g:solarized_style     =   "light"
-  let g:solarized_contrast  =   "high"
-  set background=light
-
-  " remove toolbar
-  set guioptions=egmrt
-
-  " remove scroll bars
-  set guioptions-=r
-  set guioptions-=L
-else
-  let g:solarized_termcolors=   256
-  let g:solarized_style     =   "light"
-  let g:solarized_contrast  =   "high"
-  set background=light
-endif
 
 " Change mapleader
 let mapleader=","
@@ -36,6 +17,7 @@ let mapleader=","
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+set colorcolumn=80
 
 " Set some junk
 set wildignore+=*/app/dojo-release-*
@@ -170,16 +152,16 @@ map <leader>gf <C-w>gf
 filetype plugin on
 
 " Restore cursor position
-autocmd BufReadPost *
+autocmd! BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
 
 " Markdown
-autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
-autocmd BufRead *.md set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
-autocmd BufRead *.mdown set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
-autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:> syntax=markdown
+autocmd! BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:> ft=markdown
+autocmd! BufRead *.md set ai formatoptions=tcroqn2 comments=n:> ft=markdown
+autocmd! BufRead *.mdown set ai formatoptions=tcroqn2 comments=n:> ft=markdown
+autocmd! BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:> ft=markdown
 
 " CSS3
 au BufRead,BufNewFile *.scss set filetype=scss
@@ -187,18 +169,18 @@ au BufRead,BufNewFile *.css set ft=css syntax=css
 
 " HTML5
 au BufRead,BufNewFile *.html set ft=html syntax=html
+au BufRead,BufNewFile *.hbs set ft=html syntax=html
 au BufRead,BufNewFile *.mustache set ft=html syntax=html
 au BufRead,BufNewFile *.haml set ft=haml
 
 au BufRead,BufNewFile *.js set ft=javascript syntax=javascript
 au BufRead,BufNewfile *.rb set ft=ruby syntax=ruby
-au BufRead,BufNewfile *.md set ft=markdown syntax=markdown
 
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd! BufWritePre * :%s/\s\+$//e
 
 " when vimrc is edited, reload it
-autocmd bufwritepost .gvimrc source $MYGVIMRC
-autocmd bufwritepost .vimrc source $MYVIMRC
+autocmd! bufwritepost .gvimrc source $MYGVIMRC
+autocmd! bufwritepost .vimrc source $MYVIMRC
 
 map <leader>ev :e $MYVIMRC<cr>
 
@@ -228,23 +210,7 @@ map <left> :bp<cr>
 map <leader>b :b#<cr>
 
 " when vimrc is edited, reload it
-autocmd bufwritepost .gvimrc source $MYGVIMRC
-autocmd bufwritepost .vimrc source $MYVIMRC
-
-
-
-function! ToggleBackground()
-  if (g:solarized_style=="dark")
-       let g:solarized_style="light"
-       colorscheme solarized
-  else
-       let g:solarized_style="dark"
-       colorscheme solarized
-  endif
-endfunction
-command! Togbg call ToggleBackground()
-nnoremap <F5> :call ToggleBackground()<CR>
-inoremap <F5> <ESC>:call ToggleBackground()<CR>a
-vnoremap <F5> <ESC>:call ToggleBackground()<CR>
+autocmd! bufwritepost .gvimrc source $MYGVIMRC
+autocmd! bufwritepost .vimrc source $MYVIMRC
 
 nmap <F6> :set invnumber<CR>

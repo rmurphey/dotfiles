@@ -53,3 +53,8 @@ alias be="bundle exec"
 alias marked="open -a Marked"
 export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a iTerm"'
 export CLICOLOR=1
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
