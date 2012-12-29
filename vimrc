@@ -1,3 +1,9 @@
+" Set some junk
+set wildignore+=*/app/dojo-release-*
+set wildignore+=*/js_builds*
+" set wildignore+=*/builds*
+set wildignore+=*/.sass-cache*
+
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
@@ -26,6 +32,7 @@ set wildignore+=*/builds*
 set wildignore+=*/.sass-cache*
 
 set autoindent " Copy indent from last line when starting new line.
+set colorcolumn=80 " mark col 80
 set backspace=indent,eol,start
 set cursorline " Highlight current line
 set diffopt=filler " Add vertical spaces to keep right and left aligned
