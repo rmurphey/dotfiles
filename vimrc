@@ -1,8 +1,5 @@
 " Set some junk
-set wildignore+=*/app/dojo-release-*
-set wildignore+=*/js_builds*
 " set wildignore+=*/builds*
-set wildignore+=*/.sass-cache*
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 call pathogen#runtime_append_all_bundles()
@@ -11,11 +8,15 @@ call pathogen#helptags()
 
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=Consolas:h14
+set guifont=Consolas:h16
 set linespace=1
 syntax on
 colorscheme molokai
 set lazyredraw
+
+if has("gui_running")
+  set guioptions=egmrt
+endif
 
 " Change mapleader
 let mapleader=","
@@ -25,11 +26,6 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set colorcolumn=80
 
-" Set some junk
-set wildignore+=*/app/dojo-release-*
-set wildignore+=*/js_builds*
-set wildignore+=*/builds*
-set wildignore+=*/.sass-cache*
 
 set autoindent " Copy indent from last line when starting new line.
 set colorcolumn=80 " mark col 80
