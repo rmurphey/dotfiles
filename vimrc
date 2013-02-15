@@ -199,6 +199,13 @@ set smartcase
 set nobackup
 set nowritebackup
 set noswapfile
+set guioptions-=r
+set guioptions-=l
+set guioptions-=b
+
+if has("gui_running")
+    set guioptions=egmrt
+endif
 
 if v:version >= 703
     " undo - set up persistent undo
