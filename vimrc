@@ -53,6 +53,7 @@ set magic " Enable extended regexes.
 set nocompatible " Make vim more useful
 set noerrorbells " Disable error bells.
 set nostartofline
+set noshowmode
 " set nowrap " Do not wrap lines.
 set nu " Enable line numbers.
 set report=0 " Show all changes.
@@ -217,3 +218,4 @@ autocmd! bufwritepost .gvimrc source $MYGVIMRC
 autocmd! bufwritepost .vimrc source $MYVIMRC
 
 nmap <F6> :set invnumber<CR>
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
