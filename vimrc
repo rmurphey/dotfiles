@@ -8,14 +8,22 @@ call pathogen#helptags()
 
 " Set syntax highlighting options.
 set t_Co=256
-set guifont=Consolas:h16
 set linespace=1
 syntax on
+set guifont=Consolas:h14
 colorscheme molokai
 set lazyredraw
 
+" PRESENTATIONS
+
+" set guifont=Consolas:h32
+" colorscheme zellner
+
 if has("gui_running")
-  set guioptions=egmrt
+  set guioptions=egmt
+  set guioptions-=r
+  set guioptions-=l
+  set guioptions-=b
 endif
 
 " Change mapleader
@@ -24,7 +32,6 @@ let mapleader=","
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
-set colorcolumn=80
 
 
 set autoindent " Copy indent from last line when starting new line.
@@ -38,12 +45,6 @@ set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
 set ignorecase
 set smartcase
-" set foldcolumn=4 " Column to show folds
-" set foldenable
-" set foldlevel=2
-" set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
-" set foldmethod=indent " Markers are used to specify folds.
-" set foldnestmax=3 " Set max fold nesting level
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set history=1000 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
@@ -54,7 +55,6 @@ set nocompatible " Make vim more useful
 set noerrorbells " Disable error bells.
 set nostartofline
 set noshowmode
-" set nowrap " Do not wrap lines.
 set nu " Enable line numbers.
 set report=0 " Show all changes.
 set ruler " Show the cursor position
@@ -96,11 +96,6 @@ command W w
 set lcs=tab:›\ ,trail:·,eol:↴,nbsp:_
 set fcs=fold:-
 nnoremap <silent> <leader>c :set nolist!<CR>
-
-" FuzzyFinder (,ff) (,fb) (,fd)
-nnoremap <leader>ff :FufFile<CR>
-nnoremap <leader>fb :FufBuffer<CR>
-nnoremap <leader>fd :FufDir<CR>
 
 " Clear last search (,cs)
 map <leader>cs <Esc>:noh<CR>
@@ -196,13 +191,6 @@ set smartcase
 set nobackup
 set nowritebackup
 set noswapfile
-set guioptions-=r
-set guioptions-=l
-set guioptions-=b
-
-if has("gui_running")
-    set guioptions=egmrt
-endif
 
 if v:version >= 703
     " undo - set up persistent undo

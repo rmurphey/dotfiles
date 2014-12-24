@@ -34,7 +34,7 @@
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = /Users/rmurphey/.gitignore
-	editor = mvim -f --nomru -c \"au VimLeave * !open -a iTerm\"
+	editor = subl -n -w
 
 [branch]
   autosetupmerge = true
@@ -55,3 +55,7 @@
 	summary = true
 [mergetool]
 	keepBackup = true
+[github]
+	user = rmurphey
+[push]
+	default = simple

@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/rmurphey/bocoup/training/testing'
 let g:netrw_dirhist_2='/Users/rmurphey/bocoup/jqfundamentals.com/test'
 let g:netrw_dirhist_3='/Users/rmurphey/bocoup/roost'
+let g:netrw_dirhist_4='/usr/local'
+let g:netrw_dirhist_5='/Users/rebecca.murphey/code/firebird'
+let g:netrw_dirhist_6='/Users/rebecca.murphey/code/firebird-health'
+let g:netrw_dirhist_7='/Users/rebecca.murphey/personal/react-0.11.1'
+let g:netrw_dirhist_8='/Users/rebecca.murphey/.oh-my-zsh'
+let g:netrw_dirhist_9='/Users/rebecca.murphey/.oh-my-zsh/themes'
